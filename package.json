@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "htmltojsx": "^0.3.0",
     "webdriverio": "^4.8.0"
   }
 }

@@ -5,7 +5,11 @@ var options = {
     }
 };
 
-
+var HTMLtoJSX = require('htmltojsx');
+var converter = new HTMLtoJSX({
+  createClass: true,
+  outputClassName: 'AwesomeComponent'
+});
 
 
 const getHtml = () => {
@@ -53,6 +57,7 @@ webdriverio
     .init()
     .url('http://www.instagram.com')
     .execute(getHtml).then(function(result) {
+        result.value.html = converter.convert(result.value.html);
         console.log(JSON.stringify(result, null, 2));
     })
     .end();
