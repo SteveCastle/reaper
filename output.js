@@ -1,32 +1,71 @@
-{
-  "state": "success",
-  "sessionId": null,
-  "hCode": 2135094816,
-  "value": {
-    "css": {
-      "caret-color": "rgb(0, 53, 105)",
-      "border-bottom-color": "rgb(0, 53, 105)",
-      "color": "rgb(0, 53, 105)",
-      "border-left-color": "rgb(0, 53, 105)",
-      "font-size": "14px",
-      "border-right-color": "rgb(0, 53, 105)",
-      "line-height": "18px",
-      "-webkit-text-stroke-color": "rgb(0, 53, 105)",
-      "outline-color": "rgb(0, 53, 105)",
-      "column-gap": "14px",
-      "perspective-origin": "68px 20px",
-      "text-emphasis-color": "rgb(0, 53, 105)",
-      "width": "136px",
-      "border-top-color": "rgb(0, 53, 105)",
-      "column-rule-color": "rgb(0, 53, 105)",
-      "font-family": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif",
-      "transform-origin": "68px 20px",
-      "-webkit-text-fill-color": "rgb(0, 53, 105)",
-      "text-decoration-color": "rgb(0, 53, 105)",
-      "height": "40px"
-    },
-    "html": "var AwesomeComponent = React.createClass({\n  render: function() {\n    return (\n\n      <img className=\"_8a10v\" alt=\"Available on the App Store\" src=\"/static/images/appstore-install-badges/badge_ios_english-en.png/4b70f6fae447.png\" />\n    );\n  }\n});"
-  },
-  "class": "org.openqa.selenium.remote.Response",
-  "status": 0
-}
+var AwesomeComponent = React.createClass({
+  render: function() {
+    return (
+
+      <div className="row">
+        {/*Grid column*/}
+        <div className="col-lg-4 col-md-12 mb-r">
+          {/*Card*/}
+          <div className="card testimonial-card">
+            {/*Background color*/}
+            <div className="card-up teal lighten-2">
+            </div>
+            {/*Avatar*/}
+            <div className="avatar"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(27).jpg" className="rounded-circle img-responsive" />
+            </div>
+            <div className="card-body">
+              {/*Name*/}
+              <h4 className="card-title mt-1">John Doe</h4>
+              <hr />
+              {/*Quotation*/}
+              <p><i className="fa fa-quote-left" /> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci.</p>
+            </div>
+          </div>
+          {/*Card*/}
+        </div>
+        {/*Grid column*/}
+        {/*Grid column*/}
+        <div className="col-lg-4 col-md-12 mb-r">
+          {/*Card*/}
+          <div className="card testimonial-card">
+            {/*Background color*/}
+            <div className="card-up blue lighten-2">
+            </div>
+            {/*Avatar*/}
+            <div className="avatar"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" className="rounded-circle img-responsive" />
+            </div>
+            <div className="card-body">
+              {/*Name*/}
+              <h4 className="card-title mt-1">Anna Aston</h4>
+              <hr />
+              {/*Quotation*/}
+              <p><i className="fa fa-quote-left" /> Neque cupiditate assumenda in maiores repudiandae mollitia architecto.</p>
+            </div>
+          </div>
+          {/*Card*/}
+        </div>
+        {/*Grid column*/}
+        {/*Grid column*/}
+        <div className="col-lg-4 col-md-12 mb-r">
+          {/*Card*/}
+          <div className="card testimonial-card">
+            {/*Background color*/}
+            <div className="card-up deep-purple lighten-2" />
+            {/*Avatar*/}
+            <div className="avatar"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(10).jpg" className="rounded-circle img-responsive" />
+            </div>
+            <div className="card-body">
+              {/*Name*/}
+              <h4 className="card-title mt-1">Maria Kate</h4>
+              <hr />
+              {/*Quotation*/}
+              <p><i className="fa fa-quote-left" /> Delectus impedit saepe officiis ab aliquam repellat, rem totam unde ducimus.</p>
+            </div>
+          </div>
+          {/*Card*/}
+        </div>
+        {/*Grid column*/}
+      </div>
+    );
+  }
+});

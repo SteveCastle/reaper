@@ -1,3 +1,4 @@
+var fs = require('fs');
 var webdriverio = require('webdriverio');
 var options = {
     desiredCapabilities: {
@@ -44,7 +45,7 @@ const getHtml = () => {
           return obj;
         }
 
-    const el = document.getElementsByClassName('_8a10v')[0];
+    const el = document.getElementsByClassName('row')[5];
     const css = getStylesWithoutInherited(el);
     return {
         html: el.outerHTML,
@@ -55,9 +56,21 @@ const getHtml = () => {
 webdriverio
     .remote(options)
     .init()
-    .url('http://www.instagram.com')
+    .url('https://mdbootstrap.com/sections/testimonials-sections/')
     .execute(getHtml).then(function(result) {
         result.value.html = converter.convert(result.value.html);
+        fs.writeFile("./output.js", result.value.html, function(err) {
+            if(err) {
+                return console.log(err);
+            }
+            console.log("The file was saved!");
+        });
+        fs.writeFile("./output.css", JSON.stringify(result.value.css,null, 2), function(err) {
+            if(err) {
+                return console.log(err);
+            }
+            console.log("The file was saved!");
+        });
         console.log(JSON.stringify(result, null, 2));
     })
     .end();
