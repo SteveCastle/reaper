@@ -5,7 +5,7 @@ var options = {
         browserName: 'firefox'
     }
 };
-
+var cssParse = require('css');
 var HTMLtoJSX = require('htmltojsx');
 var converter = new HTMLtoJSX({
   createClass: true,
@@ -59,7 +59,20 @@ walkDOM(el, function(node) {
 }
 
 const getCssString = (cssObject) => {
-  return JSON.stringify(cssObject,null, 2)
+    var css = "";
+    for (var key in cssObject) {
+      css = css.concat(`.${key} {`);
+        for(var i=0;i<cssObject[key].length;i++){
+            const rule = cssObject[key][i].substring(cssObject[key][i].indexOf('{') + 1, cssObject[key][i].length - 1);
+            if (cssObject[key].length != i){
+              css = css.concat(`${rule}\n`);
+            }else{
+              css = css.concat(`${rule}}\n`);
+            }
+        }
+        css = css.concat(`}\n`);
+    }
+  return css
 }
 
 const getHtmlString = (html) => {
