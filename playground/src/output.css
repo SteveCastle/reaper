@@ -1,8 +1,3 @@
-. { margin-bottom: 1rem; 
- box-sizing: inherit; 
- margin-top: 0px; 
- margin-bottom: 1rem; 
-}
 .card-body { box-sizing: inherit; 
  -moz-box-flex: 1; flex: 1 1 auto; padding: 1.25rem; 
  position: relative; 
@@ -32,7 +27,7 @@
  background-color: rgb(33, 150, 243) !important; 
  overflow: hidden; height: 120px; border-radius: 0.3rem 0.3rem 0px 0px; 
 }
-.card-up teal lighten-2 { box-sizing: inherit; 
+.card-up{ box-sizing: inherit; 
  background-color: rgb(77, 182, 172) !important; 
  background-color: rgb(0, 150, 136) !important; 
  overflow: hidden; height: 120px; border-radius: 0.3rem 0.3rem 0px 0px; 
