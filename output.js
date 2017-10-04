@@ -1,3 +1,5 @@
+import React from 'react';
+import styles from './output.css';
 var AwesomeComponent = React.createClass({
   render: function() {
     return (

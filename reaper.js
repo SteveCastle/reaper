@@ -58,19 +58,29 @@ walkDOM(el, function(node) {
     };
 }
 
+const getCssString = (cssObject) => {
+  return JSON.stringify(cssObject,null, 2)
+}
+
+const getHtmlString = (html) => {
+    const jsx = converter.convert(html);
+    const component = `import React from 'react';\nimport styles from './output.css';\n${jsx}`
+  return component;
+
+}
+
 webdriverio
     .remote(options)
     .init()
     .url('https://mdbootstrap.com/sections/testimonials-sections/')
     .execute(getHtml).then(function(result) {
-        result.value.html = converter.convert(result.value.html);
-        fs.writeFile("./output.js", result.value.html, function(err) {
+        fs.writeFile("./output.js", getHtmlString(result.value.html), function(err) {
             if(err) {
                 return console.log(err);
             }
             console.log("The file was saved!");
         });
-        fs.writeFile("./output.css", JSON.stringify(result.value.css,null, 2), function(err) {
+        fs.writeFile("./output.css", getCssString(result.value.css), function(err) {
             if(err) {
                 return console.log(err);
             }
