@@ -15,41 +15,46 @@ var converter = new HTMLtoJSX({
 
 const getHtml = () => {
         // Works in Firefox only
-        function getStylesWithoutInherited(el) {
-          return diffObjs(
-            computedStylesToObj(window.getComputedStyle(el)),
-            // window.getDefaultComputedStyle works in Firefox only
-            computedStylesToObj(window.getDefaultComputedStyle(el))
-          );
-        }
 
-        function diffObjs(obj1, obj2) {
-          var diffObj = {};
-          for (var prop in obj1) {
-            if (obj1.hasOwnProperty(prop)) {
-              if (obj1[prop] !== obj2[prop]) {
-                diffObj[prop] = obj1[prop];
-              }
+var results = {};
+
+//declaration before
+var walkDOM = function (node,func) {
+    if(node.nodeType === Node.ELEMENT_NODE){
+        func(node);
+    }
+        node = node.firstChild;
+        while(node) {
+            walkDOM(node,func);
+            node = node.nextSibling;
+        }
+};    
+
+        function getCss(el) {
+            var sheets = document.styleSheets, ret = [];
+            el.matches = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector 
+                || el.msMatchesSelector || el.oMatchesSelector;
+            for (var i in sheets) {
+                var rules = sheets[i].rules || sheets[i].cssRules;
+                for (var r in rules) {
+                    if (el.matches(rules[r].selectorText)) {
+                        ret.push(rules[r].cssText);
+                    }
+                }
             }
-          }
-          return diffObj;
-        }
-
-        function computedStylesToObj(cs) {
-          var len = cs.length;
-          var obj = {};
-          for (var i=0; i<len; i++) {
-            var style = cs[i];
-            obj[style] = cs.getPropertyValue(style);
-          }
-          return obj;
+            return ret;
         }
 
     const el = document.getElementsByClassName('row')[5];
-    const css = getStylesWithoutInherited(el);
+
+walkDOM(el, function(node) {
+    console.log(node);
+    results[node.className] = (getCss(node));
+});
+
     return {
         html: el.outerHTML,
-        css
+        css: results
     };
 }
 
