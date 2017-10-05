@@ -8,8 +8,7 @@ var options = {
 var cssParse = require('css');
 var HTMLtoJSX = require('htmltojsx');
 var converter = new HTMLtoJSX({
-  createClass: true,
-  outputClassName: 'AwesomeComponent'
+  createClass: false,
 });
 
 
@@ -45,11 +44,15 @@ var walkDOM = function (node,func) {
             return ret;
         }
 
-    const el = document.getElementsByClassName('row')[5];
+    const el = document.getElementsByClassName('teaserbox')[0];
 
 walkDOM(el, function(node) {
     console.log(node);
-    results[node.className] = (getCss(node));
+    if (node.className.length > 0){
+      results[node.className] = (getCss(node));        
+    }else {
+      results[node.tagName] = (getCss(node));
+    }
 });
 
     return {
@@ -77,15 +80,20 @@ const getCssString = (cssObject) => {
 
 const getHtmlString = (html) => {
     const jsx = converter.convert(html);
-    const component = `import React from 'react';\nimport styles from './output.css';\n${jsx}`
-  return component;
+    const component = `import React from 'react';
+import styles from './output.css';
 
+const MyComponent = ({}) => (
+${jsx})
+
+export default MyComponent;`
+  return component;
 }
 
 webdriverio
     .remote(options)
     .init()
-    .url('https://mdbootstrap.com/sections/testimonials-sections/')
+    .url('http://webdriver.io/')
     .execute(getHtml).then(function(result) {
         fs.writeFile("./output.js", getHtmlString(result.value.html), function(err) {
             if(err) {

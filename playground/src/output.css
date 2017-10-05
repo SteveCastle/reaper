@@ -1,39 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
 .card-body { box-sizing: inherit; 
  -moz-box-flex: 1; flex: 1 1 auto; padding: 1.25rem; 
  position: relative; 
- text-align: center; 
+ text-align: center;
+  font-family: "Lato",sans-serif; font-weight: 400; 
 }
-.card-title mt-1 { margin-bottom: 0.5rem; 
+.card-title{ margin-bottom: 0.5rem; 
  box-sizing: inherit; 
  margin-top: 0px; 
  margin-bottom: 0.5rem; font-family: inherit; font-weight: 500; line-height: 1.1; color: inherit; 
  font-size: 1.5rem; 
  margin-bottom: 0.75rem; 
  margin-top: 0.25rem !important; 
- font-weight: 300; 
- font-weight: 400; 
- font-weight: 400; 
- font-weight: 500; margin-bottom: 1rem; 
+ font-weight: 500;
+ margin-bottom: 1rem; 
 }
-.rounded-circle img-responsive { box-sizing: inherit; 
+.rounded-circle { box-sizing: inherit; 
  vertical-align: middle; border-style: none; 
  border-radius: 50%; 
  border-radius: 2px 2px 0px 0px; 
  width: 100%; 
  max-width: 100%; height: auto; 
 }
-.card-up blue lighten-2 { box-sizing: inherit; 
- background-color: rgb(100, 181, 246) !important; 
- background-color: rgb(33, 150, 243) !important; 
- overflow: hidden; height: 120px; border-radius: 0.3rem 0.3rem 0px 0px; 
-}
+
 .card-up{ box-sizing: inherit; 
  background-color: rgb(77, 182, 172) !important; 
  background-color: rgb(0, 150, 136) !important; 
  overflow: hidden; height: 120px; border-radius: 0.3rem 0.3rem 0px 0px; 
 }
-.col-lg-4 col-md-12 mb-r { box-sizing: inherit; 
- position: relative; width: 100%; min-height: 1px; padding-right: 15px; padding-left: 15px; 
+.column { box-sizing: inherit; 
+ position: relative; min-height: 1px; padding-right: 15px; padding-left: 15px; 
 }
 .fa fa-quote-left { box-sizing: inherit; 
  display: inline-block; 
@@ -46,16 +43,11 @@
 .row { box-sizing: inherit; 
  display: flex; flex-wrap: wrap; margin-right: -15px; margin-left: -15px; 
 }
-.card testimonial-card { box-sizing: inherit; 
+.card { box-sizing: inherit; 
   
  position: relative; display: flex; -moz-box-orient: vertical; -moz-box-direction: normal; flex-direction: column; min-width: 0px; overflow-wrap: break-word; background-color: rgb(255, 255, 255); background-clip: border-box; border: 1px solid rgba(0, 0, 0, 0.125); 
  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16), 0px 2px 10px 0px rgba(0, 0, 0, 0.12); 
  font-weight: 400; 
  border-radius: 0.3rem; 
  border: 0px none; 
-}
-.card-up deep-purple lighten-2 { box-sizing: inherit; 
- background-color: rgb(149, 117, 205) !important; 
- background-color: rgb(103, 58, 183) !important; 
- overflow: hidden; height: 120px; border-radius: 0.3rem 0.3rem 0px 0px; 
 }

@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.teaserbox { margin: 0px; padding: 0px; border: 0px none; font-family: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; font-size-adjust: inherit; font-stretch: inherit; font-feature-settings: inherit; font-language-override: inherit; font-kerning: inherit; font-variant: inherit; font-size: 100%; vertical-align: baseline; 
+ border-radius: 50%; width: 280px; height: 280px; float: left; background: white none repeat scroll 0% 0%; margin-right: 60px; text-align: center; overflow: hidden; position: relative; 
+margin: 0px; padding: 0px; border: 0px none; font-family: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; font-size-adjust: inherit; font-stretch: inherit; font-feature-settings: inherit; font-language-override: inherit; font-kerning: inherit; font-variant: inherit; font-size: 100%; vertical-align: baseline; 
+ font-weight: bold; 
+ font-family: "Lato",sans-serif; font-weight: 400; 
+}
